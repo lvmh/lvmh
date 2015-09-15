@@ -70,16 +70,20 @@
     ol.tumblr_posts {
       padding: 0;
       margin: 0;
-    }
-    li.tumblr_post {
-        float: left;
-        width: 33%;
-        padding: 0 1.5%;
-        overflow: hidden;
+      list-style: none;
+      -webkit-column-count: 3; /* Chrome, Safari, Opera */
+      -moz-column-count: 3; /* Firefox */
+      column-count: 3;
     }
     li.tumblr_post img {
         max-width: 100%;
         min-width: 100%;
+    }
+    footer.footer {
+      background-color: red;
+    }
+    footer p {
+      margin-top: 10px;
     }
     </style>
     <div class="bigbox">
@@ -131,6 +135,11 @@
       </div>
 
     </div> <!-- /container -->
+    <footer class="footer">
+      <div class="container">
+        <p><a href="store links">Store Links</a></p>
+      </div>
+    </footer>
 
 
     <!-- Bootstrap core JavaScript
