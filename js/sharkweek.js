@@ -1373,7 +1373,6 @@ Store = window.Store = {
     })(this), this.inPreview ? 500 : 0);
   },
   common: function() {
-    $('body').imagesLoaded(this.fixHeights);
     this.hideUrlBar();
     $('body').data('search') === true && this.setupSearch();
     $(document).ajaxSend(this.working).ajaxComplete(this.finished);
