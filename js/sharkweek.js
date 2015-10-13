@@ -358,8 +358,8 @@ var gBase;
         var n = t.baseCurrency || "USD";
         gBase = n;
         var r = t.debug || !1;
-        e(this).append('<option value="' + n + '">' + n + "</option>");
-        for (var i = 0; i < t.currencies.length; i++) e(this).append('<option value="' + t.currencies[i] + '">' + t.currencies[i] + "</option>");
+        e(this).append('<option data-sign="$" value="' + n + '">' + n + "</option>");
+        for (var i = 0; i < t.currencies.length; i++) e(this).append('<option data-sign="' + t.curSign[i] +' value="' + t.currencies[i] + '">' + t.currencies[i] + "</option>");
         e.cookie("currency") && (e(this).val(e.cookie("currency")), u()), e(this).change(function() {
             var t = e(this).val();
             t === n ? e.removeCookie("currency", {
@@ -1473,6 +1473,8 @@ Store.products = window.Store.products = {
         $('.currency_converter').xcurrency({
             baseCurrency: 'NZD',
             currencies: ["AUD", "CAD", "GBP", "EUR", "JPY", "USD"],
+            curSign: ["$", "$", "£", "€", "¥", "$"]
+          
         });
       });
   })(jQuery)
