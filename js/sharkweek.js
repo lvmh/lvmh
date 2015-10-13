@@ -1469,7 +1469,7 @@ Store.products = window.Store.products = {
     $(document).ready(function(){
         $('.currency_converter').xcurrency({
             baseCurrency: 'NZD',
-            currencies: ["AUD", "CAD", "GBP", "EUR", "JPY", "NZD", "USD"],
+            currencies: ["AUD", "CAD", "GBP", "EUR", "JPY", "USD"],
         });
       });
   })(jQuery)
