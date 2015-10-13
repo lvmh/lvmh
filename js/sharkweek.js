@@ -301,9 +301,8 @@ var gBase;
                     s = fx(r).from(n).to(i),
                     o = "%s %v",
                	    newsymbol = e('option[value="' + i + '"]').attr('data-sign');
-               	    alert(newsymbol);
                 e(this).hasClass("no_symbol") && (o = "%v"), e(this).html(accounting.formatMoney(s, {
-                    symbol: i,
+                    symbol: newsymbol,
                     format: o,
                     decimal: ".",  // decimal point separator
 	            thousand: ",",  // thousands separator
