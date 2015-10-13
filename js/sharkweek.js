@@ -299,7 +299,9 @@ var gBase;
                 var r = accounting.unformat(e(this).html()),
                     i = t,
                     s = fx(r).from(n).to(i),
-                    o = "%s %v";
+                    o = "%s %v",
+               	    newsymbol = e('option[value="' + i + '"]').attr('data-sign');
+               	    alert(newsymbol);
                 e(this).hasClass("no_symbol") && (o = "%v"), e(this).html(accounting.formatMoney(s, {
                     symbol: i,
                     format: o,
@@ -359,7 +361,7 @@ var gBase;
         gBase = n;
         var r = t.debug || !1;
         e(this).append('<option data-sign="$" value="' + n + '">' + n + "</option>");
-        for (var i = 0; i < t.currencies.length; i++) e(this).append('<option data-sign="' + t.curSign[i] +' value="' + t.currencies[i] + '">' + t.currencies[i] + "</option>");
+        for (var i = 0; i < t.currencies.length; i++) e(this).append('<option data-sign="' + t.curSign[i] +'" value="' + t.currencies[i] + '">' + t.currencies[i] + "</option>");
         e.cookie("currency") && (e(this).val(e.cookie("currency")), u()), e(this).change(function() {
             var t = e(this).val();
             t === n ? e.removeCookie("currency", {
