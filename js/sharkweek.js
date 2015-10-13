@@ -39,8 +39,8 @@ function convertEl(e) {
         symbol: n,
         format: i,
         decimal: ".",  // decimal point separator
-	            thousand: ",",  // thousands separator
-	            precision : 2   // decimal places
+	thousand: ",",  // thousands separator
+	precision : 2   // decimal places
     }))
 }(function(e, t) {
     var n = function(e) {
@@ -302,7 +302,10 @@ var gBase;
                     o = "%s %v";
                 e(this).hasClass("no_symbol") && (o = "%v"), e(this).html(accounting.formatMoney(s, {
                     symbol: i,
-                    format: o
+                    format: o,
+                    decimal: ".",  // decimal point separator
+	            thousand: ",",  // thousands separator
+	            precision : 2   // decimal places
                 }))
             }), e(".xprice_options .xoption").each(function() {
                 var t = e(this).attr("id"),
