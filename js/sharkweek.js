@@ -289,17 +289,20 @@ function(e) {
 });
 var gBase;
 (function(e) {
-    e.fn.select = function(t) {
+    e.fn.xcurrency = function(t) {
         function s() {
             var t = e.cookie("currency");
             t === n && (e.removeCookie("currency"), e.removeCookie("xrate")), e(".xprice").each(function() {
                 var r = accounting.unformat(e(this).html()),
-                    i = $,
+                    i = t,
                     s = fx(r).from(n).to(i),
-                    o = "%v %s";
+                    o = "%s %v";
                 e(this).hasClass("no_symbol") && (o = "%v"), e(this).html(accounting.formatMoney(s, {
                     symbol: i,
-                    format: o
+                    format: o,
+                    decimal : ".",  // decimal point separator
+	                 	thousand: ",",  // thousands separator
+	                	precision : 2   // decimal places
                 }))
             }), e(".xprice_options .xoption").each(function() {
                 var t = e(this).attr("id"),
@@ -1462,8 +1465,6 @@ Store.products = window.Store.products = {
 };
 
 
-
-//set up current converter
   (function($){    
     $(document).ready(function(){
         $('.currency_converter').xcurrency({
