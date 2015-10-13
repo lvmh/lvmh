@@ -299,7 +299,7 @@ var gBase;
                 var r = accounting.unformat(e(this).html()),
                     i = t,
                     s = fx(r).from(n).to(i),
-                    o = "%s %v",
+                    o = " %s %v",
                	    newsymbol = e('option[value="' + i + '"]').attr('data-sign');
                 e(this).hasClass("no_symbol") && (o = "%v"), e(this).html(accounting.formatMoney(s, {
                     symbol: newsymbol,
