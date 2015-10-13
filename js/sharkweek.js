@@ -34,10 +34,13 @@ function convertEl(e) {
     console.log("target" + n), console.log("base" + gBase);
     var r = fx(t).from(gBase).to(n);
     console.log("converted: " + r);
-    var i = "%v %s";
+    var i = "%s %v";
     $(e).hasClass("no_symbol") && (i = "%v"), $(e).html(accounting.formatMoney(r, {
         symbol: n,
-        format: i
+        format: i,
+        decimal: ".",  // decimal point separator
+	            thousand: ",",  // thousands separator
+	            precision : 2   // decimal places
     }))
 }(function(e, t) {
     var n = function(e) {
@@ -299,10 +302,7 @@ var gBase;
                     o = "%s %v";
                 e(this).hasClass("no_symbol") && (o = "%v"), e(this).html(accounting.formatMoney(s, {
                     symbol: i,
-                    format: o,
-                    decimal : ".",  // decimal point separator
-	                 	thousand: ",",  // thousands separator
-	                	precision : 2   // decimal places
+                    format: o
                 }))
             }), e(".xprice_options .xoption").each(function() {
                 var t = e(this).attr("id"),
