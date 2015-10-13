@@ -289,12 +289,12 @@ function(e) {
 });
 var gBase;
 (function(e) {
-    e.fn.xcurrency = function(t) {
+    e.fn.select = function(t) {
         function s() {
             var t = e.cookie("currency");
             t === n && (e.removeCookie("currency"), e.removeCookie("xrate")), e(".xprice").each(function() {
                 var r = accounting.unformat(e(this).html()),
-                    i = t,
+                    i = $,
                     s = fx(r).from(n).to(i),
                     o = "%v %s";
                 e(this).hasClass("no_symbol") && (o = "%v"), e(this).html(accounting.formatMoney(s, {
@@ -1462,6 +1462,8 @@ Store.products = window.Store.products = {
 };
 
 
+
+//set up current converter
   (function($){    
     $(document).ready(function(){
         $('.currency_converter').xcurrency({
